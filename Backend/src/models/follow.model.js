@@ -15,7 +15,6 @@ const followSchema=new mongoose.Schema({
             values:["pending","accepted","rejected"],
             message:"Status Can Only be pending,accepted or rejected"
         }
-        
     }
 },{
     timestamps:true
