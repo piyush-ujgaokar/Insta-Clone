@@ -31,7 +31,7 @@ async function register(req,res){
         password:hashedPassword
     })
 
-    const token= jwt.sign({id:user._id},process.env.JWT_SECRET,{expiresIn:'2d'})
+    const token= jwt.sign({id:user._id,username:user.username},process.env.JWT_SECRET,{expiresIn:'2d'})
 
     res.cookie("token",token)
 
@@ -72,7 +72,7 @@ async function login(req,res){
         })
     }
 
-    const token=jwt.sign({id:user._id},process.env.JWT_SECRET,{expiresIn:'2d'})
+    const token=jwt.sign({id:user._id,username:user.username},process.env.JWT_SECRET,{expiresIn:'2d'})
 
     res.cookie("token",token)
     const decoded=jwt.verify(token,process.env.JWT_SECRET)
