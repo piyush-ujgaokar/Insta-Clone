@@ -11,4 +11,7 @@ postRouter.post('/',upload.single("image"),authUser,postController.createPostcon
 postRouter.get('/',authUser,postController.getPostController)
 postRouter.get('/details/:postId',authUser,postController.getPostDetailsController)
 
+postRouter.post('/like/:postId',authUser,postController.likePostController)
+
+
 module.exports=postRouter
