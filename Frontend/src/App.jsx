@@ -1,8 +1,10 @@
-import React from 'react'
+import { RouterProvider } from "react-router"
+import  AppRoutes from './routes/AppRoutes'
+import './style.scss'
 
 const App = () => {
   return (
-    <div>App</div>
+    <AppRoutes />
   )
 }
 
